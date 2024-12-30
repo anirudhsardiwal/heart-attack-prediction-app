@@ -84,17 +84,23 @@
     <input type="text" id="glucose" name="glucose" placeholder=80>
     <br>
     <br>
-    <div style="text-align: center;">
+    <div style= "margin-left: 100px";>
       <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">
     </div>
   </form>
-  </form>
+  <div style="margin-left: 100px; margin-top: 25px;">
     <p> ----- OR ----- </p>
-    <label for="csv_file">Upload CSV File</label>
-    <input type="file" id="csv_file" name="csv_file" accept=".csv">
-    <br>
-    <br>
-    <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">   
-</div> 
+  </div>
+    <form action="/upload_csv" method="POST" enctype="multipart/form-data">
+      <br>
+      <label for="csv_file">Upload CSV File</label>
+      <input type="file" id="csv_file" name="csv_file" accept=".csv">
+      <br>
+      <br>
+      <div style="margin-left: 100px;">
+        <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">
+      </div>
+    </form>
+  </div> 
 </body> 
 </html> 
