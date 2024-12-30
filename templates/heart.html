@@ -22,7 +22,7 @@
     </select>
     <br>
     <label for="age" class="gap-40">Age</label> 
-    <input type="text" id="age" name="age">
+    <input type="text" id="age" name="age" placeholder=35>
     <br>
     <label for="Education" class="gap-40">Education</label> 
     <select id="Education" name="Education"> 
@@ -39,7 +39,7 @@
     </select>
     <br> 
     <label for="cigsPerDay" class="gap-40">Cigarettes Per Day</label> 
-    <input type="text" id="cigsPerDay" name="cigsPerDay">
+    <input type="text" id="cigsPerDay" name="cigsPerDay" placeholder=0>
     <br>
     <label for="BP Meds" class="gap-40">Do you take BP Meds?</label> 
     <select id="BP Meds" name="BP Meds"> 
@@ -53,87 +53,48 @@
       <option value="1">Yes</option>  
     </select> 
     <br> 
-    <label for="relation">Relationship</label> 
-    <select id="relation" name="relation"> 
-      <option value="0">Husband</option> 
-      <option value="1">Not-in-family</option> 
-      <option value="2">Other-relative</option> 
-      <option value="3">Own-child</option> 
-      <option value="4">Unmarried</option> 
-      <option value="5">Wife</option> 
+    <label for="prevalentHyp" class="gap-40">Do you have Hypertension?</label> 
+    <select id="prevalentHyp" name="prevalentHyp"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option>  
     </select> 
     <br> 
-    <label for="race">Race</label> 
-    <select id="race" name="race"> 
-      <option value="0">Amer Indian Eskimo</option> 
-      <option value="1">Asian Pac Islander</option> 
-      <option value="2">Black</option> 
-      <option value="3">Other</option> 
-      <option value="4">White</option> 
+    <label for="diabetes" class="gap-40">Do you have Diabetes?</label> 
+    <select id="diabetes" name="diabetes"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option>  
     </select> 
     <br> 
-    
-    </select> 
+    <label for="tot cholesterol" class="gap-40">Total Cholesterol</label> 
+    <input type="text" id="tot cholesterol" name="tot cholesterol" placeholder=180>
     <br> 
-    <label for="c_gain">Capital Gain </label> 
-    <input type="text" id="c_gain" name="c_gain">btw:[0-99999] 
+    <label for="Systolic BP" class="gap-40">Systolic BP</label> 
+    <input type="text" id="Systolic BP" name="Systolic BP" placeholder=120>
     <br> 
-    <label for="c_loss">Capital Loss </label> 
-    <input type="text" id="c_loss" name="c_loss">btw:[0-4356] 
+    <label for="Diatolic BP" class="gap-40">Diastolic BP</label> 
+    <input type="text" id="Diatolic BP" name="Diastolic BP" placeholder=80>
     <br> 
-    <label for="hours_per_week">Hours per Week </label> 
-    <input type="text" id="hours_per_week" name="hours_per_week">btw:[1-99] 
+    <label for="BMI" class="gap-40">BMI</label>
+    <input type="text" id="BMI" name="BMI" placeholder=22>   
     <br> 
-    <label for="native-country">Native Country</label> 
-    <select id="native-country" name="native-country"> 
-      <option value="0">Cambodia</option> 
-      <option value="1">Canada</option> 
-      <option value="2">China</option> 
-      <option value="3">Columbia</option> 
-      <option value="4">Cuba</option> 
-      <option value="5">Dominican Republic</option> 
-      <option value="6">Ecuador</option> 
-      <option value="7">El Salvadorr</option> 
-      <option value="8">England</option> 
-      <option value="9">France</option> 
-      <option value="10">Germany</option> 
-      <option value="11">Greece</option> 
-      <option value="12">Guatemala</option> 
-      <option value="13">Haiti</option> 
-      <option value="14">Netherlands</option> 
-      <option value="15">Honduras</option> 
-      <option value="16">HongKong</option> 
-      <option value="17">Hungary</option> 
-      <option value="18">India</option> 
-      <option value="19">Iran</option> 
-      <option value="20">Ireland</option> 
-      <option value="21">Italy</option> 
-      <option value="22">Jamaica</option> 
-      <option value="23">Japan</option> 
-      <option value="24">Laos</option> 
-      <option value="25">Mexico</option> 
-      <option value="26">Nicaragua</option> 
-      <option value="27">Outlying-US(Guam-USVI-etc)</option> 
-      <option value="28">Peru</option> 
-      <option value="29">Philippines</option> 
-      <option value="30">Poland</option> 
-      <option value="11">Portugal</option> 
-      <option value="32">Puerto-Rico</option> 
-      <option value="33">Scotland</option> 
-      <option value="34">South</option> 
-      <option value="35">Taiwan</option> 
-      <option value="36">Thailand</option> 
-      <option value="37">Trinadad&Tobago</option> 
-      <option value="38">United States</option> 
-      <option value="39">Vietnam</option> 
-      <option value="40">Yugoslavia</option> 
-    </select> 
+    <label for="heartRate" class="gap-40">Heart Rate</label>
+    <input type="text" id="heartRate" name="heartRate" placeholder=72>
     <br> 
+    <label for="glucose" class="gap-40">Glucose</label>
+    <input type="text" id="glucose" name="glucose" placeholder=80>
+    <br>
+    <br>
+    <div style="text-align: center;">
+      <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">
+    </div>
+  </form>
+  </form>
+    <p> ----- OR ----- </p>
     <label for="csv_file">Upload CSV File</label>
     <input type="file" id="csv_file" name="csv_file" accept=".csv">
     <br>
-    <input type="submit" value="Submit"> 
-  </form> 
+    <br>
+    <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">   
 </div> 
 </body> 
 </html> 
