@@ -59,4 +59,3 @@ if __name__ == "__main__":
     if not os.path.exists("uploads"):
         os.makedirs("uploads")
     app.run(debug=True)
-    app.config["TEMPLATES AUTO RELOAD"] = True
