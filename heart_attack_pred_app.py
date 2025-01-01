@@ -44,8 +44,23 @@ def upload_file():
             file_path = os.path.join("uploads", file.filename)
             file.save(file_path)
             data = pd.read_csv(file_path)
+
+            if "Gender" in data.columns:
+                data["Gender"] = data["Gender"].map({"Female": 0, "Male": 1})
+
+            for column in data.columns:
+                data[column] = pd.to_numeric(data[column], errors="coerce")
+
             predictions = bulk_predict(data)
-            result_file_path = os.path.join("uploads", "predictions.csv")
+
+            if "Gender" in predictions.columns:
+                predictions["Gender"] = predictions["Gender"].map(
+                    {0: "Female", 1: "Male"}
+                )
+
+            original_file_name = os.path.splitext(file.filename)[0]
+            result_filename = f"{original_file_name}_predictions.csv"
+            result_file_path = os.path.join("uploads", result_filename)
             predictions.to_csv(result_file_path, index=False)
             return send_file(result_file_path, as_attachment=True)
     return redirect(url_for("home"))
@@ -53,8 +68,9 @@ def upload_file():
 
 def bulk_predict(data):
     loaded_model = pickle.load(open("heart_attack_model.pkl", "rb"))
-    predictions = loaded_model.predict(data)
-    data["prediction"] = predictions
+    labels = loaded_model.predict(data)
+    outcome_mapping = {0: "Healthy", 1: "Not Healthy"}
+    data["outcome"] = [outcome_mapping[label] for label in labels]
     return data
 
 
