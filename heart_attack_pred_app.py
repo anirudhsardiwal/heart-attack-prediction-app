@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, redirect, url_for
 import pickle
 import os
 
@@ -19,22 +19,6 @@ def ValuePredictor(to_predict_list):
     return result[0]
 
 
-@app.route("/upload_csv", methods=["POST"])
-def upload_csv():
-    if request.method == "POST":
-        if "csv_file" in request.files:
-            file = request.files["csv_file"]
-            if file.filename != "":
-                file_path = os.path.join("uploads", file.filename)
-                file.save(file_path)
-                data = pd.read_csv(file_path)
-                predictions = bulk_predict(data)
-                result_file_path = os.path.join("uploads", "predictions.csv")
-                predictions.to_csv(result_file_path, index=False)
-                return send_file(result_file_path, as_attachment=True)
-        return "No file uploaded"
-
-
 @app.route("/result", methods=["POST"])
 def result():
     to_predict_list = request.form.to_dict()
@@ -46,6 +30,25 @@ def result():
     else:
         prediction = "Heart Attack not likely"
     return render_template("result.html", prediction=prediction)
+
+
+@app.route("/upload", methods=["GET", "POST"])
+def upload_file():
+    if request.method == "POST":
+        if "file" not in request.files:
+            return redirect(request.url)
+        file = request.files["file"]
+        if file.filename == "":
+            return redirect(request.url)
+        if file:
+            file_path = os.path.join("uploads", file.filename)
+            file.save(file_path)
+            data = pd.read_csv(file_path)
+            predictions = bulk_predict(data)
+            result_file_path = os.path.join("uploads", "predictions.csv")
+            predictions.to_csv(result_file_path, index=False)
+            return send_file(result_file_path, as_attachment=True)
+    return redirect(url_for("home"))
 
 
 def bulk_predict(data):

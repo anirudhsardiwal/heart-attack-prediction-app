@@ -1,106 +1,135 @@
-<html> 
-<style>
-  #myTextBox1 { margin-left: 40px; }
-  inline-elements {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .gap-40 {
-    margin-right: 40px;
-  }
- </style> 
-<body> 
-    <h3>Likelihood of Heart Attack</h3> 
+<html>
+  <style>
+    #myTextBox1 {
+      margin-left: 40px;
+    }
+    inline-elements {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .gap-40 {
+      margin-right: 40px;
+    }
+  </style>
+  <body>
+    <h3>Likelihood of Heart Attack</h3>
 
-<div class="inline-elements">
-  <form action="/result" method="POST"> 
-    <label for="Gender" class="gap-40">Gender</label> 
-    <select id="Gender" name="Gender"> 
-      <option value="0">Female</option> 
-      <option value="1">Male</option> 
-    </select>
-    <br>
-    <label for="age" class="gap-40">Age</label> 
-    <input type="text" id="age" name="age" placeholder=35>
-    <br>
-    <label for="Education" class="gap-40">Education</label> 
-    <select id="Education" name="Education"> 
-      <option value="1">School</option> 
-      <option value="2">College</option> 
-      <option value="3">Post-Grad</option> 
-      <option value="4">Doctorate</option> 
-    </select> 
-    <br> 
-    <label for="currentSmoker" class="gap-40">Current Smoker</label> 
-    <select id="currentSmoker" name="currentSmoker"> 
-      <option value="0">No</option> 
-      <option value="1">Yes</option> 
-    </select>
-    <br> 
-    <label for="cigsPerDay" class="gap-40">Cigarettes Per Day</label> 
-    <input type="text" id="cigsPerDay" name="cigsPerDay" placeholder=0>
-    <br>
-    <label for="BP Meds" class="gap-40">Do you take BP Meds?</label> 
-    <select id="BP Meds" name="BP Meds"> 
-      <option value="0">No</option> 
-      <option value="1">Yes</option> 
-    </select> 
-    <br> 
-    <label for="prevalentStroke" class="gap-40">Have you had a Stroke?</label> 
-    <select id="prevalentStroke" name="prevalentStroke"> 
-      <option value="0">No</option> 
-      <option value="1">Yes</option>  
-    </select> 
-    <br> 
-    <label for="prevalentHyp" class="gap-40">Do you have Hypertension?</label> 
-    <select id="prevalentHyp" name="prevalentHyp"> 
-      <option value="0">No</option> 
-      <option value="1">Yes</option>  
-    </select> 
-    <br> 
-    <label for="diabetes" class="gap-40">Do you have Diabetes?</label> 
-    <select id="diabetes" name="diabetes"> 
-      <option value="0">No</option> 
-      <option value="1">Yes</option>  
-    </select> 
-    <br> 
-    <label for="tot cholesterol" class="gap-40">Total Cholesterol</label> 
-    <input type="text" id="tot cholesterol" name="tot cholesterol" placeholder=180>
-    <br> 
-    <label for="Systolic BP" class="gap-40">Systolic BP</label> 
-    <input type="text" id="Systolic BP" name="Systolic BP" placeholder=120>
-    <br> 
-    <label for="Diatolic BP" class="gap-40">Diastolic BP</label> 
-    <input type="text" id="Diatolic BP" name="Diastolic BP" placeholder=80>
-    <br> 
-    <label for="BMI" class="gap-40">BMI</label>
-    <input type="text" id="BMI" name="BMI" placeholder=22>   
-    <br> 
-    <label for="heartRate" class="gap-40">Heart Rate</label>
-    <input type="text" id="heartRate" name="heartRate" placeholder=72>
-    <br> 
-    <label for="glucose" class="gap-40">Glucose</label>
-    <input type="text" id="glucose" name="glucose" placeholder=80>
-    <br>
-    <br>
-    <div style= "margin-left: 100px";>
-      <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">
-    </div>
-  </form>
-  <div style="margin-left: 100px; margin-top: 25px;">
-    <p> ----- OR ----- </p>
-  </div>
-    <form action="/upload_csv" method="POST" enctype="multipart/form-data">
-      <br>
-      <label for="csv_file">Upload CSV File</label>
-      <input type="file" id="csv_file" name="csv_file" accept=".csv">
-      <br>
-      <br>
-      <div style="margin-left: 100px;">
-        <input type="submit" value="Submit" style="font-size: 12px; padding: 5px 10px;">
+    <div class="inline-elements">
+      <form action="/result" method="POST">
+        <label for="Gender" class="gap-40">Gender</label>
+        <select id="Gender" name="Gender">
+          <option value="0">Female</option>
+          <option value="1">Male</option>
+        </select>
+        <br />
+        <label for="age" class="gap-40">Age</label>
+        <input type="text" id="age" name="age" placeholder="35" />
+        <br />
+        <label for="Education" class="gap-40">Education</label>
+        <select id="Education" name="Education">
+          <option value="1">School</option>
+          <option value="2">College</option>
+          <option value="3">Post-Grad</option>
+          <option value="4">Doctorate</option>
+        </select>
+        <br />
+        <label for="currentSmoker" class="gap-40">Current Smoker</label>
+        <select id="currentSmoker" name="currentSmoker">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <br />
+        <label for="cigsPerDay" class="gap-40">Cigarettes Per Day</label>
+        <input type="text" id="cigsPerDay" name="cigsPerDay" placeholder="0" />
+        <br />
+        <label for="BP Meds" class="gap-40">Do you take BP Meds?</label>
+        <select id="BP Meds" name="BP Meds">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <br />
+        <label for="prevalentStroke" class="gap-40"
+          >Have you had a Stroke?</label
+        >
+        <select id="prevalentStroke" name="prevalentStroke">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <br />
+        <label for="prevalentHyp" class="gap-40"
+          >Do you have Hypertension?</label
+        >
+        <select id="prevalentHyp" name="prevalentHyp">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <br />
+        <label for="diabetes" class="gap-40">Do you have Diabetes?</label>
+        <select id="diabetes" name="diabetes">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <br />
+        <label for="tot cholesterol" class="gap-40">Total Cholesterol</label>
+        <input
+          type="text"
+          id="tot cholesterol"
+          name="tot cholesterol"
+          placeholder="180"
+        />
+        <br />
+        <label for="Systolic BP" class="gap-40">Systolic BP</label>
+        <input
+          type="text"
+          id="Systolic BP"
+          name="Systolic BP"
+          placeholder="120"
+        />
+        <br />
+        <label for="Diatolic BP" class="gap-40">Diastolic BP</label>
+        <input
+          type="text"
+          id="Diatolic BP"
+          name="Diastolic BP"
+          placeholder="80"
+        />
+        <br />
+        <label for="BMI" class="gap-40">BMI</label>
+        <input type="text" id="BMI" name="BMI" placeholder="22" />
+        <br />
+        <label for="heartRate" class="gap-40">Heart Rate</label>
+        <input type="text" id="heartRate" name="heartRate" placeholder="72" />
+        <br />
+        <label for="glucose" class="gap-40">Glucose</label>
+        <input type="text" id="glucose" name="glucose" placeholder="80" />
+        <br />
+        <br />
+        <div style="margin-left: 100px" ;>
+          <input
+            type="submit"
+            value="Submit"
+            style="font-size: 12px; padding: 5px 10px"
+          />
+        </div>
+      </form>
+      <div style="margin-left: 100px; margin-top: 25px">
+        <p>----- OR -----</p>
       </div>
-    </form>
-  </div> 
-</body> 
-</html> 
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <br />
+        <label for="file" class="gap-40">Upload CSV File: </label>
+        <input type="file" id="file" name="file" accept=".csv" />
+        <br />
+        <br />
+        <div style="margin-left: 100px">
+          <input
+            type="submit"
+            value="Upload"
+            style="font-size: 12px; padding: 5px 10px"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
